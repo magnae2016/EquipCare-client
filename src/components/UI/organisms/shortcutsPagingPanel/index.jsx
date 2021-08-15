@@ -8,31 +8,37 @@ function ShortcutsPagingPanel() {
             prefix: '최신 알람',
             title: 'MTBI 현황',
             selected: true,
+            hash: '#list-item-1',
         },
         {
             prefix: '장비별',
             title: '알람 현황',
             selected: false,
+            hash: '#',
         },
         {
             prefix: '날짜별',
             title: '알람 현황',
             selected: false,
+            hash: '#',
         },
         {
             prefix: '알람별',
             title: '장비 현황',
             selected: false,
+            hash: '#',
         },
         {
             prefix: '장비 알람',
             title: 'Summary',
             selected: false,
+            hash: '#',
         },
         {
             prefix: '액션별',
             title: '소요시간 현황',
             selected: false,
+            hash: '#',
         },
     ]
 
@@ -47,6 +53,7 @@ function ShortcutsPagingPanel() {
                                 prefix={element.prefix}
                                 title={element.title}
                                 selected={element.selected}
+                                hash={element.hash}
                             />
                         ))}
                     </ul>
