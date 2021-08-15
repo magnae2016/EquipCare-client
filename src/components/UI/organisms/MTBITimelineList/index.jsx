@@ -51,7 +51,9 @@ function MTBITimelineList() {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await axios.get('/api/equipment/mtbi')
+            const response = await axios.get('/api/equipment/mtbi', {
+                params: { limit: 10, offset: 0 },
+            })
             setAnnounces(response.data)
         }
         fetchData()
