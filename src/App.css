@@ -34,6 +34,10 @@ em {
     font-style: normal;
 }
 
+button {
+    cursor: pointer;
+}
+
 button,
 input {
     -webkit-border-radius: 0;
@@ -160,9 +164,16 @@ table caption {
 .sch_logo .sch_logo_nepes .sch_ico_mask::before,
 .sch_btn_reset::before,
 .sch_btn_search .sch_ico_mask::before {
-    background-image: url('./assets/images/sp_main_search_3aad7571.png');
+    background-image: url('assets/images/sp_main_search_3aad7571.png');
     -webkit-background-size: 323px 234px;
     background-size: 323px 234px;
+    background-repeat: no-repeat;
+}
+
+.ce_emw::before {
+    background-image: url('assets/images/sp_today_74ce2ab3.png');
+    -webkit-background-size: 570px 543px;
+    background-size: 570px 543px;
     background-repeat: no-repeat;
 }
 
