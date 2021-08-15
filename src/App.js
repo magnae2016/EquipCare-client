@@ -1,14 +1,20 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
-import FormTotalSearch from './components/UI/organisms/sch'
+import Home from './components/pages/Home'
+import Equipment from './components/pages/Equipment'
 
 function App() {
     return (
         <div className="App">
             <div id="container" role="main">
                 <div className="column_left">
-                    <div>
-                        <FormTotalSearch />
-                    </div>
+                    <Router>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/home" component={Home} />
+                        <Switch>
+                            <Route path="/equipment" component={Equipment} />
+                        </Switch>
+                    </Router>
                 </div>
                 <div className="column_right">
                     <div></div>

@@ -1,0 +1,119 @@
+.sch_tab {
+    height: 50px;
+    position: relative;
+    z-index: 3010;
+    border-bottom: 1px solid #e2e5e8;
+    background-image: linear-gradient(
+        to right,
+        #09c665 0,
+        #07bb7b 52%,
+        #0fa3a6 100%
+    );
+}
+
+.sch_tab_inner {
+    position: relative;
+}
+
+.sch_tab .sch_tab_inner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 2px;
+    z-index: 10;
+    width: 18px;
+    background-image: linear-gradient(
+        to right,
+        #09c665 0,
+        rgba(9, 198, 101, 0) 100%
+    );
+    pointer-events: none;
+}
+
+.sch_tab .sch_tab_inner:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 2px;
+    z-index: 10;
+    width: 42px;
+    background-image: linear-gradient(
+        to left,
+        #119eb1 0,
+        #0fa3a6 10px,
+        rgba(15, 163, 166, 0) 100%
+    );
+    pointer-events: none;
+}
+
+.api_list_scroll_wrap {
+    height: 50px;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.api_list_scroll_wrap > div {
+    position: relative;
+    width: 100%;
+}
+
+.api_list_scroll {
+    position: relative;
+    height: 100%;
+    font-family: sans-serif;
+    font-size: 0;
+    line-height: 0;
+    white-space: nowrap;
+}
+
+.api_list_scroll .bx {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, helvetica,
+        Apple SD Gothic Neo, sans-serif;
+    vertical-align: top;
+    white-space: normal;
+}
+
+.api_list_scroll .bx a {
+    display: block;
+    position: relative;
+    height: 50px;
+    margin-left: 6px;
+    padding: 0 9px;
+    font-size: 17px;
+    line-height: 50px;
+    color: rgb(255, 255, 255, 0.4);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.3px;
+}
+
+.api_list_scroll .bx a .m {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    padding: 0 3px;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.sch_tab .bx a.selected {
+    color: #ffffff;
+}
+
+.sch_tab .bx:last-child a {
+    margin-right: 12px;
+}
+
+.sch_tab .bx + .bx a {
+    margin-left: 0;
+}
