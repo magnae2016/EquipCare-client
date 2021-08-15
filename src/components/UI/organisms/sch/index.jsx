@@ -29,7 +29,7 @@ function FormTotalSearch() {
                                 <input
                                     id="query"
                                     type="search"
-                                    name="query"
+                                    name="q"
                                     value={query}
                                     ref={textInput}
                                     onChange={handleChangeQuery}
