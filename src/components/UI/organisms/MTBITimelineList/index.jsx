@@ -45,7 +45,7 @@ function MTBITimelineList() {
     function handleClickMoreButton(e) {
         setIsToggleOn((prevState) => !prevState)
         setLimit((prevState) =>
-            prevState == maxLimit ? initialLimit : maxLimit
+            prevState === maxLimit ? initialLimit : maxLimit
         )
     }
 

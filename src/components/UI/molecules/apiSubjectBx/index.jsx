@@ -1,8 +1,6 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import './index.css'
 import ApiTitleArea from '@/components/UI/atoms/apiTitleArea'
-import BarGraphBox from '@/components/UI/molecules/barGraphBox'
-import TableBox from '@/components/UI/molecules/tableBox'
 
 function ApiSubjectBx(props) {
     return (
