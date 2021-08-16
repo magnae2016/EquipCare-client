@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './index.css'
 
 function TableBox({ datas }) {
-    let current = [...datas]
-
     const [sortText, setSortText] = useState(true)
-    const [names, setNames] = useState(current.map(({ EQ_NAME }) => EQ_NAME))
-    const [counts, setCounts] = useState(current.map(({ COUNT }) => COUNT))
+    const [isDescending, setIsDescending] = useState(true)
+    const names = datas.map(({ EQ_NAME }) => EQ_NAME)
+    const counts = datas.map(({ COUNT }) => COUNT)
 
     function handleClickSortTab(e) {
-        setNames((prevState) => [...prevState].reverse())
-        setCounts((prevState) => [...prevState].reverse())
+        setIsDescending((prevState) => !prevState)
         setSortText((prevState) => !prevState)
     }
 
@@ -52,17 +50,31 @@ function TableBox({ datas }) {
                                 <caption>장비별 알람 수</caption>
                                 <thead>
                                     <tr>
-                                        {names.map((element, index) => (
+                                        {names.map((element, index, array) => (
                                             <th scope="col" key={index}>
-                                                {element}
+                                                {isDescending
+                                                    ? element
+                                                    : array[
+                                                          array.length -
+                                                              index -
+                                                              1
+                                                      ]}
                                             </th>
                                         ))}
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        {counts.map((element, index) => (
-                                            <td key={index}>{element}</td>
+                                        {counts.map((element, index, array) => (
+                                            <td key={index}>
+                                                {isDescending
+                                                    ? element
+                                                    : array[
+                                                          array.length -
+                                                              index -
+                                                              1
+                                                      ]}
+                                            </td>
                                         ))}
                                     </tr>
                                 </tbody>

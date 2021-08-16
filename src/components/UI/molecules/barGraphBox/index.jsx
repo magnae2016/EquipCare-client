@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 import './index.css'
 
 function Bar({ data, isSelected, onClick }) {
-    const { EQ_NAME, COUNT, ratio } = data
+    const { EQ_NAME, ratio } = data
     return (
         <div
             className={isSelected ? 'bar item e_local on' : 'bar item e_local'}
@@ -43,7 +43,7 @@ function Board({ datas, status, onClick }) {
     )
 }
 
-function BarGraphBox({ datas, count }) {
+function BarGraphBox({ datas, count, onClick }) {
     const initialLimit = 10
     const [status, setStatus] = useState(Array(initialLimit).fill(false))
 
@@ -62,9 +62,15 @@ function BarGraphBox({ datas, count }) {
         <div className="graph_box">
             <div className="legend_area">
                 <ul>
-                    <li className="e_president">알람</li>
-                    <li className="e_general">Error</li>
-                    <li className="e_local">Down</li>
+                    <li className="e_president" onClick={() => onClick('')}>
+                        알람
+                    </li>
+                    <li className="e_general" onClick={() => onClick('error')}>
+                        Error
+                    </li>
+                    <li className="e_local" onClick={() => onClick('down')}>
+                        Down
+                    </li>
                 </ul>
             </div>
             <div className="graph_area">

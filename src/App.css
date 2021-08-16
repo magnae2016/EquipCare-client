@@ -34,6 +34,7 @@ em {
     font-style: normal;
 }
 
+li,
 button {
     cursor: pointer;
 }
@@ -148,7 +149,7 @@ table caption {
 .column_left {
     flex: none;
     width: 33%;
-    /* max-width: 375px; */
+    min-width: 375px;
     z-index: 100;
 }
 
