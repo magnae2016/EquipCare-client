@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import ApiSubjectBx from '@/components/UI/molecules/apiSubjectBx'
+import React, { useEffect, useState, Fragment } from 'react'
 import axios from 'axios'
+import ApiSubjectBx from '@/components/UI/molecules/apiSubjectBx'
+import BarGraphBox from '@/components/UI/molecules/barGraphBox'
+import TableBox from '@/components/UI/molecules/tableBox'
 
 function AlarmByEquipment(params) {
     const [datas, setDatas] = useState([])
@@ -21,11 +23,14 @@ function AlarmByEquipment(params) {
     return (
         <section className="sc cs">
             <div className="sc cs_voting_rate"></div>
-            <ApiSubjectBx
-                datas={datas}
-                count={count}
-                updatedAt={updatedAt}
-            ></ApiSubjectBx>
+            <ApiSubjectBx datas={datas} count={count} updatedAt={updatedAt}>
+                {datas.length > 0 && (
+                    <Fragment>
+                        <BarGraphBox datas={datas} count={count} />
+                        <TableBox datas={datas} />
+                    </Fragment>
+                )}
+            </ApiSubjectBx>
         </section>
     )
 }
