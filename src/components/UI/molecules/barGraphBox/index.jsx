@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import './index.css'
 
-function Bar({ data, isSelected, onClick, filter }) {
+function Bar({ data, isSelected, onClick, filter, tick }) {
     const { EQ_NAME, ratio } = data
     const match = {
         error: 'e_local',
@@ -20,7 +20,7 @@ function Bar({ data, isSelected, onClick, filter }) {
                     <span
                         className="graph_bar"
                         style={{
-                            height: `${ratio * 10}%`,
+                            height: `${ratio * tick}%`,
                         }}
                     >
                         {' '}
@@ -33,7 +33,7 @@ function Bar({ data, isSelected, onClick, filter }) {
     )
 }
 
-function Board({ datas, status, onClick, filter }) {
+function Board({ datas, status, onClick, filter, tick }) {
     function renderBar(i) {
         return (
             <Bar
@@ -42,6 +42,7 @@ function Board({ datas, status, onClick, filter }) {
                 isSelected={status[i]}
                 onClick={() => onClick(i)}
                 filter={filter}
+                tick={tick}
             />
         )
     }
@@ -65,6 +66,9 @@ function BarGraphBox({ datas, count, onClick, filter }) {
         ...element,
         ratio: (element.COUNT / count) * 100,
     }))
+    const max = Math.ceil(current[0].ratio)
+    const t = parseInt(max / 5) + 1
+    const tick = 100 / (t * 5)
 
     return (
         <div className="graph_box">
@@ -84,12 +88,11 @@ function BarGraphBox({ datas, count, onClick, filter }) {
             <div className="graph_area">
                 <div className="graph_header">
                     <ol>
-                        <li>10%</li>
-                        <li>8%</li>
-                        <li>6%</li>
-                        <li>4%</li>
-                        <li>2%</li>
-                        <li>0%</li>
+                        {[...Array(6).keys()]
+                            .reverse()
+                            .map((element, index) => (
+                                <li key={index}>{element * t}%</li>
+                            ))}
                     </ol>
                 </div>
                 <div className="barChart graph_scroll_wrap">
@@ -101,6 +104,7 @@ function BarGraphBox({ datas, count, onClick, filter }) {
                                     status={status}
                                     onClick={(i) => handleClick(i)}
                                     filter={filter}
+                                    tick={tick}
                                 />
                             )}
                         </div>
