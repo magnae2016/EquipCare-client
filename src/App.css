@@ -147,7 +147,7 @@ table caption {
 
 .column_left {
     flex: none;
-    width: 30%;
+    width: 33%;
     /* max-width: 375px; */
     z-index: 100;
 }

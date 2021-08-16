@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.css'
 
-function TableBox(params) {
+function TableBox({ datas }) {
+    let current = [...datas]
+
+    const [sortText, setSortText] = useState(true)
+    const [names, setNames] = useState(current.map(({ EQ_NAME }) => EQ_NAME))
+    const [counts, setCounts] = useState(current.map(({ COUNT }) => COUNT))
+
+    function handleClickSortTab(e) {
+        setNames((prevState) => [...prevState].reverse())
+        setCounts((prevState) => [...prevState].reverse())
+        setSortText((prevState) => !prevState)
+    }
+
     return (
         <div className="table_box">
             <div className="table_title">
@@ -12,15 +24,9 @@ function TableBox(params) {
                             className="sub_option"
                             aria-selected="true"
                             role="option"
+                            onClick={handleClickSortTab}
                         >
-                            장비명
-                        </a>
-                        <a
-                            className="sub_option"
-                            aria-selected="false"
-                            role="option"
-                        >
-                            내림차순
+                            {sortText ? '내림차순' : '오름차순'}
                         </a>
                     </div>
                 </div>
@@ -28,13 +34,13 @@ function TableBox(params) {
             <div className="table_content">
                 <div className="table_header">
                     <table>
-                        <caption>투표율제목</caption>
+                        <caption>장비별 알람 수</caption>
                         <tbody>
                             <tr>
-                                <th>지역</th>
+                                <th>장비</th>
                             </tr>
                             <tr>
-                                <th>투표율</th>
+                                <th>알람 수</th>
                             </tr>
                         </tbody>
                     </table>
@@ -43,47 +49,21 @@ function TableBox(params) {
                     <div className="inner">
                         <div className="api_list_scroll">
                             <table>
-                                <caption>투표율</caption>
+                                <caption>장비별 알람 수</caption>
                                 <thead>
                                     <tr>
-                                        <th scope="col">전남</th>
-                                        <th scope="col">제주</th>
-                                        <th scope="col">경남</th>
-                                        <th scope="col">전북</th>
-                                        <th scope="col">울산</th>
-                                        <th scope="col">경북</th>
-                                        <th scope="col">강원</th>
-                                        <th scope="col">세종</th>
-                                        <th scope="col">서울</th>
-                                        <th scope="col">충북</th>
-                                        <th scope="col">광주</th>
-                                        <th scope="col">부산</th>
-                                        <th scope="col">충남</th>
-                                        <th scope="col">대전</th>
-                                        <th scope="col">경기</th>
-                                        <th scope="col">대구</th>
-                                        <th scope="col">인천</th>
+                                        {names.map((element, index) => (
+                                            <th scope="col" key={index}>
+                                                {element}
+                                            </th>
+                                        ))}
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td className="highest">69.2%</td>
-                                        <td>65.9%</td>
-                                        <td>65.8%</td>
-                                        <td>65.2%</td>
-                                        <td>64.8%</td>
-                                        <td>64.7%</td>
-                                        <td>63.2%</td>
-                                        <td>61.7%</td>
-                                        <td>59.9%</td>
-                                        <td>59.3%</td>
-                                        <td>59.2%</td>
-                                        <td>58.8%</td>
-                                        <td>58.1%</td>
-                                        <td>58.0%</td>
-                                        <td>57.8%</td>
-                                        <td>57.3%</td>
-                                        <td className="lowest">55.3%</td>
+                                        {counts.map((element, index) => (
+                                            <td key={index}>{element}</td>
+                                        ))}
                                     </tr>
                                 </tbody>
                             </table>

@@ -10,7 +10,6 @@ function AlarmByEquipment(params) {
     useEffect(() => {
         async function fetchData() {
             const response = await axios.get('api/equipment/alarms')
-            console.log(response)
             const { last_update_time, count, datas } = response.data
             setUpdatedAt(last_update_time)
             setCount(count)
