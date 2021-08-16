@@ -1,0 +1,213 @@
+.legend_area {
+    padding: 16px 18px 12px 18px;
+}
+
+.legend_area ul {
+    overflow: hidden;
+}
+
+.legend_area li {
+    float: left;
+    margin: 0 0 0 9px;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(66, 66, 66);
+}
+
+.legend_area ul li:first-child {
+    margin-left: 0;
+}
+
+.legend_area ul li::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin: 5px 5px 0 0;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    vertical-align: top;
+}
+
+.legend_area ul li.e_president::before {
+    background-color: rgba(224, 95, 95, 0.7);
+}
+
+.legend_area ul li.e_general::before {
+    background-color: rgba(53, 177, 204, 0.7);
+}
+
+.legend_area ul li.e_local::before {
+    background-color: rgba(110, 90, 206, 0.7);
+}
+
+.graph_area {
+    overflow: hidden;
+    padding: 0 0 0 18px;
+    height: 217px;
+}
+
+.graph_header {
+    float: left;
+    height: 217px;
+    width: 62px;
+    font-size: 11px;
+    color: rgb(143, 143, 143);
+}
+
+.graph_header ol {
+    padding: 0 0 0;
+}
+
+.graph_header li {
+    height: 37px;
+    padding: 0px 0 0 6px;
+}
+
+.graph_scroll_wrap {
+    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 217px;
+    padding-bottom: 30px;
+    box-sizing: content-box;
+}
+
+.graph_scroll_wrap .inner {
+    position: relative;
+    display: inline-block;
+    height: 217px;
+    margin-right: 18px;
+}
+
+.list_scroll {
+    position: relative;
+    padding: 1px 0 0 0;
+    height: 100%;
+    font-size: 0;
+    line-height: 0;
+    white-space: nowrap;
+}
+
+.list_scroll .bar.item {
+    display: inline-block;
+    width: 61px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.list_scroll .bar.item.on {
+    position: relative;
+}
+
+.list_scroll .bar.item.on::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 31px;
+    left: 0px;
+    width: 1px;
+    z-index: 10;
+}
+
+.list_scroll .bar.item.on::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 31px;
+    right: -1px;
+    width: 1px;
+    background-color: rgba(233, 236, 239, 0.5);
+    z-index: 10;
+}
+
+.list_scroll .bar.item a {
+    display: block;
+    height: 100%;
+}
+
+.graph_wrap {
+    position: relative;
+    z-index: 100;
+    height: 185px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    display: -webkit-box;
+    -webkit-box-align: end;
+    -webkit-box-pack: center;
+}
+
+.item.on .graph_wrap {
+    background-color: rgba(233, 236, 239, 0.3);
+}
+
+.graph_wrap .graph_bar {
+    display: block;
+    width: 11px;
+    left: 50%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-origin: border-box;
+}
+
+.item.e_local .graph_bar {
+    background-color: #988bd7;
+    border-top: 1px solid #7b6cc5;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.item.e_general .graph_bar {
+    background-color: #6ec9dc;
+    border-top: 1px solid #5ebccf;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.item.e_president .graph_bar {
+    background-color: #ec8d8d;
+    border-top: 1px solid #e27676;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.graph_wrap .graph_bar .num {
+    display: block;
+    width: 30px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    position: relative;
+    left: 50%;
+    top: -18px;
+    margin-left: -15px;
+}
+
+.item.e_local .graph_bar .num {
+    color: #988bd7;
+}
+
+.item.e_general .graph_bar .num {
+    color: #5ebccf;
+}
+
+.item.e_president .graph_bar .num {
+    color: #ec8d8d;
+}
+
+.num_title {
+    display: block;
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    border-left: 1px solid rgba(220, 224, 226, 0.5);
+    background-color: #fbfcfd;
+    text-align: center;
+    font-weight: normal;
+    color: rgb(102, 102, 102);
+}
+
+.item:first-child .num_title {
+    border-left: 0l;
+}

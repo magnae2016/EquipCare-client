@@ -148,12 +148,14 @@ table caption {
 .column_left {
     flex: none;
     width: 30%;
+    /* max-width: 375px; */
+    z-index: 100;
 }
 
 .column_right {
     flex: 1;
     background-color: #eff0f4;
-    border-left: 1px solid #e7e8eb;
+    border-left: 1px solid #d1d7de;
 }
 
 .column_left > div,
@@ -175,6 +177,20 @@ table caption {
     -webkit-background-size: 570px 543px;
     background-size: 570px 543px;
     background-repeat: no-repeat;
+}
+
+.graph_header,
+.graph_scroll_wrap .inner {
+    background: url('assets/images/bg_graph.png') repeat-x;
+    background-size: 1px 217px;
+    -webkit-background-size: 1px 217px;
+}
+
+.list_scroll .bar.item.on::before,
+.list_scroll .bar.item.on::after {
+    background: url('assets/images/bg_on.png') repeat-y;
+    background-size: 1px 5px;
+    -webkit-background-size: 1px 5px;
 }
 
 #ct {

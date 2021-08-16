@@ -1,0 +1,29 @@
+.cs_voting_rate {
+    letter-spacing: -0.3px;
+}
+
+.api_subject_bx {
+    margin-top: 9px;
+    border: 1px solid rgb(226, 229, 232);
+    border-width: 1px 0;
+    background-color: #ffffff;
+}
+
+.api_title_area {
+    position: relative;
+}
+
+.api_title {
+    height: 50px;
+    padding: 0 18px;
+    font-size: 17px;
+    line-height: 51px;
+    color: #000000;
+    letter-spacing: -0.3px;
+    font-weight: bold;
+}
+
+.num_statement {
+    background-color: #fbfcfd;
+    border-top: 1px solid rgb(236, 240, 242);
+}
