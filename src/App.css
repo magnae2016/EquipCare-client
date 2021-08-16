@@ -148,8 +148,8 @@ table caption {
 
 .column_left {
     flex: none;
-    width: 33%;
-    min-width: 375px;
+    width: 30%;
+    /* max-width: 375px; */
     z-index: 100;
 }
 
