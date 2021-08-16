@@ -36,9 +36,10 @@ function AlarmByEquipment(params) {
                         <BarGraphBox
                             datas={datas}
                             count={count}
+                            filter={filter}
                             onClick={handleClickFilter}
                         />
-                        <TableBox datas={datas} />
+                        <TableBox datas={datas} filter={filter} />
                     </Fragment>
                 )}
             </ApiSubjectBx>

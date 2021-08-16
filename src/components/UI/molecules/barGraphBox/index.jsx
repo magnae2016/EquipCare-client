@@ -1,11 +1,18 @@
 import React, { Fragment, useState } from 'react'
 import './index.css'
 
-function Bar({ data, isSelected, onClick }) {
+function Bar({ data, isSelected, onClick, filter }) {
     const { EQ_NAME, ratio } = data
+    const match = {
+        error: 'e_local',
+        down: 'e_president',
+    }
+    const color = match[filter] || 'e_general'
     return (
         <div
-            className={isSelected ? 'bar item e_local on' : 'bar item e_local'}
+            className={
+                isSelected ? `bar item ${color} on` : `bar item ${color}`
+            }
             onClick={onClick}
         >
             <a>
@@ -26,7 +33,7 @@ function Bar({ data, isSelected, onClick }) {
     )
 }
 
-function Board({ datas, status, onClick }) {
+function Board({ datas, status, onClick, filter }) {
     function renderBar(i) {
         return (
             <Bar
@@ -34,6 +41,7 @@ function Board({ datas, status, onClick }) {
                 data={datas[i]}
                 isSelected={status[i]}
                 onClick={() => onClick(i)}
+                filter={filter}
             />
         )
     }
@@ -43,7 +51,7 @@ function Board({ datas, status, onClick }) {
     )
 }
 
-function BarGraphBox({ datas, count, onClick }) {
+function BarGraphBox({ datas, count, onClick, filter }) {
     const initialLimit = 10
     const [status, setStatus] = useState(Array(initialLimit).fill(false))
 
@@ -62,14 +70,14 @@ function BarGraphBox({ datas, count, onClick }) {
         <div className="graph_box">
             <div className="legend_area">
                 <ul>
-                    <li className="e_president" onClick={() => onClick('')}>
+                    <li className="e_general" onClick={() => onClick('')}>
                         알람
                     </li>
-                    <li className="e_general" onClick={() => onClick('error')}>
-                        Error
+                    <li className="e_local" onClick={() => onClick('error')}>
+                        ERROR
                     </li>
-                    <li className="e_local" onClick={() => onClick('down')}>
-                        Down
+                    <li className="e_president" onClick={() => onClick('down')}>
+                        DOWN
                     </li>
                 </ul>
             </div>
@@ -92,6 +100,7 @@ function BarGraphBox({ datas, count, onClick }) {
                                     datas={current}
                                     status={status}
                                     onClick={(i) => handleClick(i)}
+                                    filter={filter}
                                 />
                             )}
                         </div>

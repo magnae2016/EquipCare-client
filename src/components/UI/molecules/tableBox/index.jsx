@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './index.css'
 
-function TableBox({ datas }) {
+function TableBox({ datas, filter }) {
     const [sortText, setSortText] = useState(true)
     const [isDescending, setIsDescending] = useState(true)
     const names = datas.map(({ EQ_NAME }) => EQ_NAME)
@@ -15,7 +15,9 @@ function TableBox({ datas }) {
     return (
         <div className="table_box">
             <div className="table_title">
-                <h3>장비별 알람 수</h3>
+                <h3>
+                    장비별 {filter ? `${filter.toUpperCase()} ` : ''}알람 수
+                </h3>
                 <div className="sort_tab">
                     <div className="sub_option_area">
                         <a
