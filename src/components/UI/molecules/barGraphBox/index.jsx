@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useRef, useEffect } from 'react'
 import './index.css'
 
 function Bar({ data, isSelected, onClick, filter, tick }) {
@@ -55,12 +55,17 @@ function Board({ datas, status, onClick, filter, tick }) {
 function BarGraphBox({ datas, count, onClick, filter }) {
     const initialLimit = 10
     const [status, setStatus] = useState(Array(initialLimit).fill(false))
+    const scrollView = useRef(null)
 
     function handleClick(i) {
         const current = Array(initialLimit).fill(false)
         current[i] = true
         setStatus(current)
     }
+
+    useEffect(() => {
+        scrollView.current.scrollLeft = 0
+    }, [filter])
 
     let current = datas.slice(0, initialLimit).map((element) => ({
         ...element,
@@ -95,7 +100,7 @@ function BarGraphBox({ datas, count, onClick, filter }) {
                             ))}
                     </ol>
                 </div>
-                <div className="barChart graph_scroll_wrap">
+                <div className="barChart graph_scroll_wrap" ref={scrollView}>
                     <div className="inner">
                         <div className="list_scroll">
                             {current.length > 0 && (
