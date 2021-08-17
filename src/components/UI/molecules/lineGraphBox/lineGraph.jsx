@@ -24,7 +24,7 @@ class CustomizedXAxisTick extends PureComponent {
                     fontSize={13}
                     fill="#8f8f8f"
                 >
-                    {payload.value.substring(5)}
+                    {payload.value.substring(5).replaceAll('-', '.')}
                 </text>
             </g>
         )
@@ -85,6 +85,33 @@ class CustomizedLabel extends PureComponent {
     }
 }
 
+const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div>
+                <div class="bb-tooltip-container">
+                    <table class="bb-tooltip">
+                        <tbody>
+                            <tr>
+                                <th colspan="2">{`\`${label
+                                    .substring(2)
+                                    .replaceAll('-', '.')}`}</th>
+                            </tr>
+                            <tr class="bb-tooltip-name-line1">
+                                <td class="value" colspan="2">
+                                    {`${payload[0].value.toLocaleString()}`}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        )
+    }
+
+    return null
+}
+
 function LineGraph({ data }) {
     return (
         <ResponsiveContainer width={2055} height={254} debounce={1000}>
@@ -131,7 +158,16 @@ function LineGraph({ data }) {
                     tickMargin={10}
                     tick={<CustomizedYAxisTick />}
                 />
-                <Tooltip />
+                <Tooltip
+                    content={<CustomTooltip />}
+                    active={true}
+                    cursor={{
+                        opacity: '0.25',
+                        stroke: '#77a4f0',
+                        strokeWidth: 1,
+                        strokeDasharray: '3 2',
+                    }}
+                />
                 <Line
                     type="linear"
                     dataKey="COUNT"
