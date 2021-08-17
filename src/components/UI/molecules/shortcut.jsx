@@ -6,7 +6,7 @@ function Shortcut({ prefix, title, selected, hash = '#' }) {
         <li className="ce_index_item" role="presentation">
             <HashLink
                 smooth
-                to={{ hash: '#list-item-1' }}
+                to={{ hash: hash }}
                 className="ce_index_a"
                 aria-selected={selected}
             >

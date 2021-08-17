@@ -28,7 +28,7 @@ function AlarmByEquipment(params) {
     }
 
     return (
-        <section className="sc cs">
+        <section id="list-item-2" className="sc cs">
             <div className="sc cs_voting_rate"></div>
             <ApiSubjectBx title="장비별 알람 현황">
                 {datas.length > 0 && (

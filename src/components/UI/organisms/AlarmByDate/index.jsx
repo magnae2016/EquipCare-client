@@ -23,7 +23,7 @@ function AlarmByDate(params) {
     }
 
     return (
-        <section className="sc cs">
+        <section id="list-item-3" className="sc cs">
             <div className="sc cs_voting_rate"></div>
             <ApiSubjectBx title="날짜별 알람 현황">
                 <div className="detail_box">

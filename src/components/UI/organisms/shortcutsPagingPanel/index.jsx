@@ -14,13 +14,13 @@ function ShortcutsPagingPanel() {
             prefix: '장비별',
             title: '알람 현황',
             selected: false,
-            hash: '#',
+            hash: '#list-item-2',
         },
         {
             prefix: '날짜별',
             title: '알람 현황',
             selected: false,
-            hash: '#',
+            hash: '#list-item-3',
         },
         {
             prefix: '알람별',
