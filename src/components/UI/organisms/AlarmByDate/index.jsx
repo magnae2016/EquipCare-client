@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import ApiSubjectBx from '@/components/UI/molecules/apiSubjectBx'
 import LineGraphBox from '@/components/UI/molecules/lineGraphBox'
+import ButtonArea from '@/components/UI/molecules/buttonArea'
 
 function AlarmByDate(params) {
+    const filters = ['알람', 'ERROR', 'DOWN']
+    const [filter, setFilter] = useState(undefined)
     const [alarms, setAlarms] = useState([])
     useEffect(() => {
         async function fetchData() {
@@ -11,12 +14,23 @@ function AlarmByDate(params) {
             setAlarms(response.data)
         }
         fetchData()
-    }, [])
+    }, [filter])
+
+    function handleClickFilter(f) {
+        console.log(f)
+        // setFilter(f)
+    }
+
     return (
         <section className="sc cs">
             <div className="sc cs_voting_rate"></div>
             <ApiSubjectBx title="날짜별 알람 현황">
                 <div className="detail_box">
+                    <ButtonArea
+                        filters={filters}
+                        filter={filter}
+                        onClick={handleClickFilter}
+                    />
                     <LineGraphBox data={alarms} />
                 </div>
             </ApiSubjectBx>

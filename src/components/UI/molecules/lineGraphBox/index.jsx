@@ -13,7 +13,6 @@ function LineGraphBox({ data }) {
     return (
         <Fragment>
             <div className="line_graph">
-                <ButtonArea />
                 <div className="chart_con">
                     <div className="chart">
                         <div ref={scrollView} className="scroll_wrapper">

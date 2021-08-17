@@ -1,5 +1,7 @@
 .detail_box {
     position: relative;
+    padding-top: 12px;
+    text-align: center;
     /* padding-bottom: 17px; */
 }
 

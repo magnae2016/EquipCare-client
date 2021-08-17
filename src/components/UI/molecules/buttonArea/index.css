@@ -1,5 +1,4 @@
 .button_area {
-    width: 285px;
     height: 36px;
     font-size: 0;
     line-height: 0;
@@ -11,7 +10,7 @@
     background: rgba(255, 255, 255, 0.9);
     text-align: left;
     margin: 0 auto;
-    margin-bottom: 12px;
+    display: inline-block;
 }
 
 .button_area .tab {
