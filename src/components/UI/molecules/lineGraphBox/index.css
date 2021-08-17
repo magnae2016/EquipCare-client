@@ -1,0 +1,41 @@
+.detail_box {
+    position: relative;
+    /* padding-bottom: 17px; */
+}
+
+.detail_box .line_graph {
+    padding-top: 12px;
+    border: 1px solid #f2f4f6;
+    border-width: 1px 0;
+    background-color: #f9fafc;
+}
+
+.chart_con {
+    height: 254px;
+    position: relative;
+    padding: 0;
+}
+
+.chart_con .chart {
+    padding: 0;
+}
+
+.chart_con .bb {
+    display: block;
+    width: 73px;
+    height: 100%;
+}
+
+.scroll_wrapper {
+    position: absolute;
+    top: 0px;
+    overflow: auto;
+    left: 73px;
+    right: 0;
+    height: 254px;
+}
+
+.origin {
+    position: relative;
+    left: -62px;
+}
