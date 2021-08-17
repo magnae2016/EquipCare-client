@@ -166,7 +166,8 @@ table caption {
 
 .sch_logo .sch_logo_nepes .sch_ico_mask::before,
 .sch_btn_reset::before,
-.sch_btn_search .sch_ico_mask::before {
+.sch_btn_search .sch_ico_mask::before,
+.sch_btn_back::before {
     background-image: url('assets/images/sp_main_search_3aad7571.png');
     -webkit-background-size: 323px 234px;
     background-size: 323px 234px;
@@ -192,6 +193,27 @@ table caption {
     background: url('assets/images/bg_on.png') repeat-y;
     background-size: 1px 5px;
     -webkit-background-size: 1px 5px;
+}
+
+.district_form .selectbox .selectbox_btn::after,
+.district_content .title_info::before,
+.ico_status,
+.ico_status.as_count_complete {
+    background-image: url('assets/images/sp_election_vote.png');
+    -webkit-background-size: 645px 643px;
+    background-size: 645px 643px;
+}
+
+.u_atcp_wrap .imsc,
+.u_atcp_wrap .imsc_af:after,
+.u_atcp_wrap .imsc_bf:before {
+    display: inline-block;
+    overflow: hidden;
+    color: transparent;
+    white-space: nowrap;
+    background: url('assets/images/sp_autocomplete_53fc4681.png') 0 0 no-repeat;
+    -webkit-background-size: 295px 278px;
+    background-size: 295px 278px;
 }
 
 #ct {

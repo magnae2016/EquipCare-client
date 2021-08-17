@@ -4,6 +4,7 @@ import ShortcutsPagingPanel from '@/components/UI/organisms/shortcutsPagingPanel
 import MTBITimelineList from '@/components/UI/organisms/MTBITimelineList'
 import AlarmByEquipment from '@/components/UI/organisms/AlarmByEquipment'
 import AlarmByDate from '@/components/UI/organisms/AlarmByDate'
+import EquipmentByAlarm from '@/components/UI/organisms/EquipmentByAlarm'
 
 function Home() {
     return (
@@ -13,6 +14,7 @@ function Home() {
             <MTBITimelineList />
             <AlarmByEquipment />
             <AlarmByDate />
+            <EquipmentByAlarm />
         </div>
     )
 }

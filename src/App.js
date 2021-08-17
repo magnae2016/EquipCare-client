@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import './App.css'
 import Home from './components/pages/Home'
+import SelectTab from './components/pages/SelectTab'
 import Equipment from './components/pages/Equipment'
 
 function App() {
@@ -14,11 +15,16 @@ function App() {
             <div id="container" role="main">
                 <div className="column_left">
                     <Router>
-                        <Route exact path="/" component={Home} />
-                        <Route exact path="/home" component={Home} />
-                        <Redirect to="/home" />
                         <Switch>
-                            <Route path="/equipment" component={Equipment} />
+                            <Route exact path="/" component={Home} />
+                            <Route exact path="/home" component={Home} />
+                            <Route exact path="/select" component={SelectTab} />
+                            <Route
+                                exact
+                                path="/equipment"
+                                component={Equipment}
+                            />
+                            <Redirect to="/home" />
                         </Switch>
                     </Router>
                 </div>

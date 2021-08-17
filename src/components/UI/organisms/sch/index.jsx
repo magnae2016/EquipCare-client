@@ -24,6 +24,7 @@ function FormTotalSearch() {
                                 <span className="sch_ico_mask"></span>
                             </Link>
                         </div>
+                        <Link to="/" className="sch_btn_back"></Link>
                         <form action="/equipment">
                             <div className="sch_input_wrap">
                                 <input

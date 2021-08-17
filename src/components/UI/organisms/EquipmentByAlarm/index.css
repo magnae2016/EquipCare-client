@@ -1,0 +1,109 @@
+.district {
+    background-color: #ffffff;
+}
+
+.district_info {
+    position: relative;
+    padding: 10px 18px 5px;
+    background-color: #fff;
+}
+
+.district_info .info {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: -1px;
+    color: #666;
+}
+
+.district_info .info_l {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.district_form {
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 9px 18px;
+    font-size: 15px;
+    letter-spacing: -1px;
+    z-index: 2100;
+}
+
+.district_info + .district_form {
+    padding-top: 7px;
+}
+
+.district_form .selectbox {
+    position: relative;
+    border: 1px solid #bbb;
+}
+
+.district_form .selectbox::before,
+.district_form .selectbox::after {
+    content: '';
+    display: table;
+}
+
+.district_form .selectbox::after {
+    clear: both;
+}
+
+.district_form .selectbox .selectbox_wrp {
+    float: left;
+    width: 21.6%;
+    box-sizing: border-box;
+}
+
+.district_form .selectbox .selectbox_wrp-long1 {
+    width: 100%;
+    border-left: 1px solid #ebebeb;
+}
+
+.district_form .selectbox .selectbox_btn {
+    position: relative;
+    width: 100%;
+    height: 39px;
+    padding: 0 23px 0 12px;
+    text-align: left;
+    color: #999;
+    font-size: 15px;
+    border: 0;
+    background: #ffffff;
+}
+
+.district_form .selectbox .selectbox_btn::after {
+    position: absolute;
+    top: 17px;
+    right: 10px;
+    content: '';
+    display: block;
+    width: 9px;
+    height: 5px;
+    background-position: -585px -408px;
+}
+
+.district_form .selectbox .selectbox_wrp + .selectbox_wrp {
+    border-left: 1px solid #ebebeb;
+}
+
+.sggt_container {
+    min-height: 153px;
+}
+
+.nx_suggest_recent_nothing {
+    overflow: hidden;
+    padding: 53px 0 54px;
+    color: #666;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: -0.3px;
+    font-size: 17px;
+}
+
+.kwd_dsc {
+    font-size: 16px;
+    color: #8f8f8f;
+}

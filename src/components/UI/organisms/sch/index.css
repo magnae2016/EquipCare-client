@@ -145,3 +145,19 @@
     height: 34px;
     background-position: -174px -194px;
 }
+
+.sch_btn_back {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 10px 19px 20px;
+}
+
+.sch_btn_back::before {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 18px;
+    background-position: -274px -46px;
+}
