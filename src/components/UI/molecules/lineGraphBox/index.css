@@ -85,6 +85,7 @@
     word-break: normal;
     word-wrap: break-word;
     border: 0;
+    text-align: left;
 }
 
 .bb-tooltip-container tr + tr {

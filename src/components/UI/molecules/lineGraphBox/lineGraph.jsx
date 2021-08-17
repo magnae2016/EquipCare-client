@@ -1,13 +1,5 @@
 import React, { PureComponent } from 'react'
-import {
-    LineChart,
-    Line,
-    XAxis,
-    YAxis,
-    Tooltip,
-    CartesianGrid,
-    ResponsiveContainer,
-} from 'recharts'
+import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts'
 import activeDot from 'assets/images/img_line1.png'
 
 class CustomizedXAxisTick extends PureComponent {
@@ -95,13 +87,14 @@ const CustomTooltip = ({ active, payload, label }) => {
                     <table className="bb-tooltip">
                         <tbody>
                             <tr>
-                                <th colSpan="2">{`\`${label
-                                    .substring(2)
-                                    .replaceAll('-', '.')}`}</th>
+                                <th colSpan="2">{`${label.replaceAll(
+                                    '-',
+                                    '.'
+                                )}`}</th>
                             </tr>
                             <tr className="bb-tooltip-name-line1">
                                 <td className="value" colSpan="2">
-                                    {`${payload[0].value.toLocaleString()}`}
+                                    {`${payload[0].value.toLocaleString()}건`}
                                 </td>
                             </tr>
                         </tbody>
@@ -116,71 +109,69 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 function LineGraph({ data }) {
     return (
-        <ResponsiveContainer width={2055} height={254} debounce={1000}>
-            <LineChart
-                width="100%"
-                height="100%"
-                data={data}
-                margin={{
-                    top: 0,
-                    right: 0,
-                    left: 0,
-                    bottom: 0,
+        <LineChart
+            width={2055}
+            height={254}
+            data={data}
+            margin={{
+                top: 0,
+                right: 0,
+                left: 0,
+                bottom: 0,
+            }}
+        >
+            <CartesianGrid
+                vertical={false}
+                stroke="#f4f6f7"
+                strokeWidth={1}
+                fill="#FFFFFF"
+            />
+            <XAxis
+                dataKey="DATE"
+                interval={0}
+                padding={{ left: 0, right: 0 }}
+                tickLine={false}
+                tickSize={0}
+                tick={<CustomizedXAxisTick />}
+                stroke="#ecf0f2"
+                strokeWidth={1}
+                scale="band"
+                tickMargin={10}
+            />
+            <YAxis
+                width={65}
+                type="number"
+                tickCount={9}
+                domain={['auto', 'dataMax + 100']}
+                interval="preserveEnd"
+                padding={{ top: 0, bottom: 0 }}
+                tickLine={false}
+                tickSize={0}
+                strokeWidth={1}
+                stroke="#ecf0f2"
+                tickMargin={10}
+                tick={<CustomizedYAxisTick />}
+            />
+            <Tooltip
+                content={<CustomTooltip />}
+                active={true}
+                cursor={{
+                    opacity: '0.25',
+                    stroke: '#77a4f0',
+                    strokeWidth: 1,
+                    strokeDasharray: '3 2',
                 }}
-            >
-                <CartesianGrid
-                    vertical={false}
-                    stroke="#f4f6f7"
-                    strokeWidth={1}
-                    fill="#FFFFFF"
-                />
-                <XAxis
-                    dataKey="DATE"
-                    interval={0}
-                    padding={{ left: 0, right: 0 }}
-                    tickLine={false}
-                    tickSize={0}
-                    tick={<CustomizedXAxisTick />}
-                    stroke="#ecf0f2"
-                    strokeWidth={1}
-                    scale="band"
-                    tickMargin={10}
-                />
-                <YAxis
-                    width={65}
-                    type="number"
-                    tickCount={9}
-                    domain={['auto', 'dataMax + 100']}
-                    interval="preserveEnd"
-                    padding={{ top: 0, bottom: 0 }}
-                    tickLine={false}
-                    tickSize={0}
-                    strokeWidth={1}
-                    stroke="#ecf0f2"
-                    tickMargin={10}
-                    tick={<CustomizedYAxisTick />}
-                />
-                <Tooltip
-                    content={<CustomTooltip />}
-                    active={true}
-                    cursor={{
-                        opacity: '0.25',
-                        stroke: '#77a4f0',
-                        strokeWidth: 1,
-                        strokeDasharray: '3 2',
-                    }}
-                />
-                <Line
-                    type="linear"
-                    dataKey="COUNT"
-                    activeDot={<CustomizedDot />}
-                    label={<CustomizedLabel />}
-                    stroke="#0abe16"
-                    strokeWidth={2}
-                    isAnimationActive={false}
-                />
-            </LineChart>
-        </ResponsiveContainer>
+            />
+            <Line
+                type="linear"
+                dataKey="COUNT"
+                activeDot={<CustomizedDot />}
+                label={<CustomizedLabel />}
+                stroke="#0abe16"
+                strokeWidth={2}
+                isAnimationActive={false}
+            />
+        </LineChart>
     )
 }
 
