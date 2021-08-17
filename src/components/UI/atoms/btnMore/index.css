@@ -44,7 +44,8 @@
     margin-left: 6px;
 }
 
-.comp_economy .fold + .ce_btn_more::after {
+.comp_economy .fold + .ce_btn_more::after,
+.ce_btn_more.right::after {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     margin-top: 17px;

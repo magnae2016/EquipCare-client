@@ -34,7 +34,7 @@ function AlarmByDate(params) {
                     />
                     <LineGraphBox data={alarms} filter={filter} />
                     <div style={{ marginTop: 12 }}>
-                        <BtnMore text="더보기" />
+                        <BtnMore className="right" text="더보기" />
                     </div>
                 </div>
             </ApiSubjectBx>
