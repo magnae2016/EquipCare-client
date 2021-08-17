@@ -1,0 +1,47 @@
+.button_area {
+    width: 285px;
+    height: 36px;
+    font-size: 0;
+    line-height: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 18px;
+    -webkit-box-shadow: 0 0 4px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 0 4px 0 rgb(0 0 0 / 10%);
+    background: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 12px;
+}
+
+.button_area .tab {
+    border: 0;
+    background: 0;
+    cursor: pointer;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    padding: 4px;
+    margin-left: 1px;
+}
+
+.button_area .tab .text {
+    display: inline-block;
+    padding: 0 20px;
+    line-height: 28px;
+    border-radius: 16.5px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.23px;
+    color: #242424;
+    vertical-align: top;
+}
+
+.button_area .tab + .tab {
+    margin-left: 16px;
+}
+
+.button_area .tab.on .text {
+    background: #000;
+    font-weight: 700;
+    color: #fff;
+}
