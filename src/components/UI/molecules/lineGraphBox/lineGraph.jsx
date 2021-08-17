@@ -62,14 +62,14 @@ const CustomizedDot = (props) => {
 
 class CustomizedLabel extends PureComponent {
     render() {
-        const { x, y, value } = this.props
+        const { x, y, value, theme } = this.props
 
         return (
             <text
                 x={x}
                 y={y}
                 dy={-10}
-                fill="#0abe16"
+                fill={theme}
                 fontSize={13}
                 textAnchor="middle"
             >
@@ -107,7 +107,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     return null
 }
 
-function LineGraph({ data }) {
+function LineGraph({ data, theme }) {
     return (
         <LineChart
             width={2055}
@@ -166,8 +166,8 @@ function LineGraph({ data }) {
                 type="linear"
                 dataKey="COUNT"
                 activeDot={<CustomizedDot />}
-                label={<CustomizedLabel />}
-                stroke="#0abe16"
+                label={<CustomizedLabel theme={theme} />}
+                stroke={theme}
                 strokeWidth={2}
                 isAnimationActive={false}
             />

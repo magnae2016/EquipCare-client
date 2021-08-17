@@ -7,7 +7,7 @@ import ButtonArea from '@/components/UI/molecules/buttonArea'
 function AlarmByDate(params) {
     const values = ['', 'error', 'down']
     const names = ['알람', 'ERROR', 'DOWN']
-    const [filter, setFilter] = useState(undefined)
+    const [filter, setFilter] = useState('')
     const [alarms, setAlarms] = useState([])
     useEffect(() => {
         async function fetchData() {
@@ -29,10 +29,9 @@ function AlarmByDate(params) {
                     <ButtonArea
                         names={names}
                         values={values}
-                        filter={filter}
                         onClick={handleClickFilter}
                     />
-                    <LineGraphBox data={alarms} />
+                    <LineGraphBox data={alarms} filter={filter} />
                 </div>
             </ApiSubjectBx>
         </section>
