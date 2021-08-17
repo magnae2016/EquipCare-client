@@ -135,7 +135,7 @@ function LineGraph({ data }) {
                     fill="#FFFFFF"
                 />
                 <XAxis
-                    dataKey="DAY"
+                    dataKey="DATE"
                     interval={0}
                     padding={{ left: 0, right: 0 }}
                     tickLine={false}

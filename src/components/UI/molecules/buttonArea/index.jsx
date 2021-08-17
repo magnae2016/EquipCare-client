@@ -13,13 +13,13 @@ function Button({ text, isSelected, onClick }) {
     )
 }
 
-function ButtonArea({ filters, filter, onClick }) {
-    let initialState = Array(filters.length).fill(false)
+function ButtonArea({ names, values, onClick }) {
+    let initialState = Array(values.length).fill(false)
     initialState[0] = true
     const [status, setStatus] = useState(initialState)
 
     function handleClick(i) {
-        const current = Array(filters.length).fill(false)
+        const current = Array(values.length).fill(false)
         current[i] = true
         setStatus(current)
     }
@@ -27,14 +27,14 @@ function ButtonArea({ filters, filter, onClick }) {
     return (
         <div className="button_area">
             <h2 className="tablist">
-                {filters.map((element, index) => (
+                {values.map((element, index) => (
                     <Button
                         key={index}
-                        text={element}
+                        text={names[index]}
                         isSelected={status[index]}
                         onClick={() => {
                             handleClick(index)
-                            onClick(element)
+                            onClick(values[index])
                         }}
                     />
                 ))}

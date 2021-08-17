@@ -1,7 +1,6 @@
 import React, { Fragment, useRef, useEffect } from 'react'
 import './index.css'
 import LineGraph from './lineGraph'
-import ButtonArea from '@/components/UI/molecules/buttonArea'
 
 function LineGraphBox({ data }) {
     const scrollView = useRef(null)
