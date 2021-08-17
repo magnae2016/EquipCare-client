@@ -11,9 +11,9 @@ function LineGraphBox({ data, filter }) {
     }
     const theme = colors[filter] || '#34bcca'
 
-    useEffect(() => {
-        scrollView.current.scrollLeft = scrollView.current.scrollWidth
-    }, [filter])
+    // useEffect(() => {
+    //     scrollView.current.scrollLeft = scrollView.current.scrollWidth
+    // }, [filter])
 
     return (
         <Fragment>

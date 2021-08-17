@@ -3,6 +3,7 @@ import axios from 'axios'
 import ApiSubjectBx from '@/components/UI/molecules/apiSubjectBx'
 import LineGraphBox from '@/components/UI/molecules/lineGraphBox'
 import ButtonArea from '@/components/UI/molecules/buttonArea'
+import BtnMore from '@/components/UI/atoms/btnMore'
 
 function AlarmByDate(params) {
     const values = ['', 'error', 'down']
@@ -32,6 +33,9 @@ function AlarmByDate(params) {
                         onClick={handleClickFilter}
                     />
                     <LineGraphBox data={alarms} filter={filter} />
+                    <div style={{ marginTop: 12 }}>
+                        <BtnMore text="더보기" />
+                    </div>
                 </div>
             </ApiSubjectBx>
         </section>

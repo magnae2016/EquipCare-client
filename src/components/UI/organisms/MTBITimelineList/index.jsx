@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './index.css'
 import axios from 'axios'
+import BtnMore from '@/components/UI/atoms/btnMore'
 
 function ListItem({ ALARM_COUNT, EQ_NAME, EQ_TESTER, MTBI_VALUE, START_TIME }) {
     const isToday = false // TODO: Verify isToday
@@ -83,25 +84,12 @@ function MTBITimelineList() {
                         ))}
                     </ul>
                     <div className="ce_info">
-                        <button
-                            type="button"
-                            className={
-                                !isToggleOn
-                                    ? 'ce_btn_more ce_pagination'
-                                    : 'ce_btn_more fold ce_pagination'
-                            }
+                        <BtnMore
+                            className={!isToggleOn ? '' : 'fold'}
                             onClick={handleClickMoreButton}
-                        >
-                            {!isToggleOn ? '더보기' : '접기'}
-                        </button>
-                        {isToggleOn && (
-                            <button
-                                type="button"
-                                className="ce_btn_more ce_pagination"
-                            >
-                                더보기
-                            </button>
-                        )}
+                            text={!isToggleOn ? '더보기' : '접기'}
+                        />
+                        {isToggleOn && <BtnMore text="더보기" />}
                     </div>
                 </div>
             </div>
