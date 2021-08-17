@@ -1,14 +1,20 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useRef, useEffect } from 'react'
 import './index.css'
 import LineGraph from './lineGraph'
 
 function LineGraphBox({ data }) {
+    const scrollView = useRef(null)
+
+    useEffect(() => {
+        scrollView.current.scrollLeft = scrollView.current.scrollWidth
+    }, [])
+
     return (
         <Fragment>
             <div className="line_graph">
                 <div className="chart_con">
                     <div className="chart">
-                        <div className="scroll_wrapper">
+                        <div ref={scrollView} className="scroll_wrapper">
                             <LineGraph data={data} />
                         </div>
                     </div>

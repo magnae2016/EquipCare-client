@@ -23,6 +23,7 @@ class CustomizedXAxisTick extends PureComponent {
                     textAnchor="middle"
                     fontSize={13}
                     fill="#8f8f8f"
+                    letterSpacing="-0.3"
                 >
                     {payload.value.substring(5).replaceAll('-', '.')}
                 </text>
@@ -44,6 +45,7 @@ class CustomizedYAxisTick extends PureComponent {
                     textAnchor="end"
                     fontSize={13}
                     fill="#8f8f8f"
+                    letterSpacing="-0.3"
                 >
                     {payload.value.toLocaleString()}
                 </text>
