@@ -89,16 +89,16 @@ const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
             <div>
-                <div class="bb-tooltip-container">
-                    <table class="bb-tooltip">
+                <div className="bb-tooltip-container">
+                    <table className="bb-tooltip">
                         <tbody>
                             <tr>
-                                <th colspan="2">{`\`${label
+                                <th colSpan="2">{`\`${label
                                     .substring(2)
                                     .replaceAll('-', '.')}`}</th>
                             </tr>
-                            <tr class="bb-tooltip-name-line1">
-                                <td class="value" colspan="2">
+                            <tr className="bb-tooltip-name-line1">
+                                <td className="value" colSpan="2">
                                     {`${payload[0].value.toLocaleString()}`}
                                 </td>
                             </tr>
@@ -145,7 +145,7 @@ function LineGraph({ data }) {
                     tickMargin={10}
                 />
                 <YAxis
-                    width={73}
+                    width={65}
                     type="number"
                     tickCount={9}
                     domain={['auto', 'dataMax + 100']}
