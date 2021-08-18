@@ -1,9 +1,19 @@
-import React, { useState, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './index.css'
 
-function FormTotalSearch({ query, onChange, onClickClearInput, onClickInput }) {
+function FormTotalSearch({
+    query,
+    onChange,
+    onClickClearInput,
+    onClickInput,
+    hasFocus,
+}) {
     const textInput = useRef(null)
+
+    useEffect(() => {
+        if (hasFocus) textInput.current.focus()
+    }, [])
 
     return (
         <div id="sch" className="sch">

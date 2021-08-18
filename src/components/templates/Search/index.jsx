@@ -39,7 +39,7 @@ function Item({ keyword, subword, onChange }) {
     )
 }
 
-function Search({ query, onChange, onClickClearInput, suggest }) {
+function Search({ query, onChange, onClickClearInput, suggest, hasFocus }) {
     const List = suggest.filter((s) =>
         s.name.toLowerCase().includes(query.toLowerCase())
     )

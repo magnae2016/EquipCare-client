@@ -32,7 +32,7 @@ function EquipmentByAlarm({ keyword }) {
                             <div className="selectbox_wrp selectbox_wrp-long1">
                                 <Link to="/select">
                                     <button className="selectbox_btn">
-                                        알람 종류를 선택하세요.
+                                        {keyword || '알람 종류를 선택하세요.'}
                                     </button>
                                 </Link>
                             </div>

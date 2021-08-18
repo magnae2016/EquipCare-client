@@ -25,7 +25,7 @@ function Home(props) {
 
     return (
         <div>
-            <Header onClickInput={handleClickInput}></Header>
+            <Header onClickInput={handleClickInput} hasFocus={false}></Header>
             <ShortcutsPagingPanel />
             <MTBITimelineList />
             <AlarmByEquipment />

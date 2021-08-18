@@ -6,6 +6,7 @@ function Header({
     onChange = () => false,
     onClickClearInput = () => false,
     onClickInput = () => false,
+    hasFocus = true,
     children,
 }) {
     return (
@@ -15,6 +16,7 @@ function Header({
                 onChange={onChange}
                 onClickClearInput={onClickClearInput}
                 onClickInput={onClickInput}
+                hasFocus={hasFocus}
             />
             {children}
         </header>
