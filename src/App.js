@@ -7,6 +7,7 @@ import {
 import './App.css'
 import Home from './components/pages/Home'
 import SelectTab from './components/pages/SelectTab'
+import TotalSearch from './components/pages/TotalSearch'
 import Equipment from './components/pages/Equipment'
 
 function App() {
@@ -19,6 +20,11 @@ function App() {
                             <Route exact path="/" component={Home} />
                             <Route exact path="/home" component={Home} />
                             <Route exact path="/select" component={SelectTab} />
+                            <Route
+                                exact
+                                path="/search"
+                                component={TotalSearch}
+                            />
                             <Route
                                 exact
                                 path="/equipment"

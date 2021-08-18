@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './index.css'
 
-function FormTotalSearch({ query, onChange, onClickClearInput }) {
+function FormTotalSearch({ query, onChange, onClickClearInput, onClickInput }) {
     const textInput = useRef(null)
 
     return (
@@ -24,6 +24,7 @@ function FormTotalSearch({ query, onChange, onClickClearInput }) {
                                     name="q"
                                     value={query}
                                     ref={textInput}
+                                    onClick={onClickInput}
                                     onChange={(e) => onChange(e.target.value)}
                                     title="검색어를 입력해주세요."
                                     placeholder="검색어를 입력해주세요."
