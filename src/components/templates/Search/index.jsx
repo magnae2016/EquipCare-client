@@ -33,7 +33,9 @@ function Item({ keyword, subword, onChange }) {
 }
 
 function Search({ query, onChange, onClickClearInput, suggest }) {
-    const List = suggest
+    const List = suggest.filter((s) =>
+        s.name.toLowerCase().includes(query.toLowerCase())
+    )
     return (
         <div className="sch_focus">
             <Header
@@ -57,7 +59,7 @@ function Search({ query, onChange, onClickClearInput, suggest }) {
                                 {List.map((element, index) => (
                                     <Item
                                         key={index}
-                                        keyword={element.EVENT_NAME}
+                                        keyword={element.name}
                                         subword={element.COUNT}
                                         onChange={onChange}
                                     />
