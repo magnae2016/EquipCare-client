@@ -66,15 +66,16 @@
     padding-bottom: 8px;
 }
 
-.kwd_lst li {
+.kwd_lst .type_date {
     position: relative;
     margin: 0 17px 0 14px;
     padding-right: 22px;
     line-height: 44px;
+    padding-right: 4.1em;
 }
 
-.kwd_lst li.type_date {
-    padding-right: 4.1em;
+.kwd_lst li:hover {
+    background-color: #f7f9fa;
 }
 
 .u_atcp_wrap .kwd_lst .kwd {
@@ -123,7 +124,7 @@
     margin: 7px 0 0 7px;
 }
 
-.u_atcp_wrap .kwd_lst li.type_date .date {
+.u_atcp_wrap .kwd_lst .type_date .date {
     position: absolute;
     top: 0;
     right: 22px;

@@ -5,11 +5,6 @@ import './index.css'
 function FormTotalSearch({ query, onChange, onClickClearInput }) {
     const textInput = useRef(null)
 
-    const handleClickClearInput = () => {
-        // setQuery('')
-        // textInput.current.focus()
-    }
-
     return (
         <div id="sch" className="sch">
             <section>

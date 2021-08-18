@@ -2,23 +2,32 @@ import React from 'react'
 import './index.css'
 import Header from '@/components/templates/Header'
 
-function Item({ keyword, subword }) {
+function Item({ keyword, subword, onChange }) {
     return (
-        <li className="type_date">
-            <a className="kwd">
-                <span className="fix">
-                    <span className="common_ico_kwd">
-                        <i className="imsc ico_search"></i>
+        <li>
+            <div className="type_date">
+                <a className="kwd">
+                    <span className="fix">
+                        <span className="common_ico_kwd">
+                            <i className="imsc ico_search"></i>
+                        </span>
+                        {keyword}
                     </span>
-                    {keyword}
-                </span>
-            </a>
-            <em className="date">
-                <span>{subword}개 항목</span>
-            </em>
-            <a role="button" className="u_atcp_add">
-                <span className="imsc ico_add"></span>
-            </a>
+                </a>
+                <em className="date">
+                    <span>{subword}개 항목</span>
+                </em>
+                <a
+                    href={() => false}
+                    role="button"
+                    className="u_atcp_add"
+                    onClick={() => {
+                        onChange(keyword)
+                    }}
+                >
+                    <span className="imsc ico_add"></span>
+                </a>
+            </div>
         </li>
     )
 }
@@ -50,6 +59,7 @@ function Search({ query, onChange, onClickClearInput, suggest }) {
                                         key={index}
                                         keyword={element.EVENT_NAME}
                                         subword={element.COUNT}
+                                        onChange={onChange}
                                     />
                                 ))}
                             </ul>

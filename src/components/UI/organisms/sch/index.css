@@ -94,7 +94,6 @@
     -webkit-appearance: none;
     text-overflow: ellipsis;
     border-radius: 0;
-    text-transform: uppercase;
 }
 
 .sch_input::placeholder {
