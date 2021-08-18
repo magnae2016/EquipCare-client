@@ -2,16 +2,12 @@ import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './index.css'
 
-function FormTotalSearch() {
-    const [query, setQuery] = useState('')
+function FormTotalSearch({ query, onChange, onClickClearInput }) {
     const textInput = useRef(null)
-    const handleChangeQuery = (e) => {
-        setQuery(e.target.value)
-    }
 
     const handleClickClearInput = () => {
-        setQuery('')
-        textInput.current.focus()
+        // setQuery('')
+        // textInput.current.focus()
     }
 
     return (
@@ -33,7 +29,7 @@ function FormTotalSearch() {
                                     name="q"
                                     value={query}
                                     ref={textInput}
-                                    onChange={handleChangeQuery}
+                                    onChange={(e) => onChange(e.target.value)}
                                     title="검색어를 입력해주세요."
                                     placeholder="검색어를 입력해주세요."
                                     className="sch_input"
@@ -43,7 +39,10 @@ function FormTotalSearch() {
                                     <button
                                         id="clear_input"
                                         type="button"
-                                        onClick={handleClickClearInput}
+                                        onClick={() => {
+                                            onClickClearInput()
+                                            textInput.current.focus()
+                                        }}
                                         className="sch_btn_reset"
                                     ></button>
                                 )}

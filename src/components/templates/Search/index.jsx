@@ -23,11 +23,15 @@ function Item({ keyword, subword }) {
     )
 }
 
-function Search({ suggest }) {
+function Search({ query, onChange, onClickClearInput, suggest }) {
     const List = suggest
     return (
         <div className="sch_focus">
-            <Header></Header>
+            <Header
+                query={query}
+                onChange={onChange}
+                onClickClearInput={onClickClearInput}
+            ></Header>
             <div className="u_atcp_wrap">
                 <div className="nx_suggest_recent">
                     <div className="sggt_fixer">

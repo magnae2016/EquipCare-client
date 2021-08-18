@@ -1,11 +1,15 @@
 import React from 'react'
 import FormTotalSearch from '@/components/UI/organisms/sch'
 
-function Header(props) {
+function Header({ query, onChange, onClickClearInput, children }) {
     return (
         <header className="header">
-            <FormTotalSearch />
-            {props.children}
+            <FormTotalSearch
+                query={query}
+                onChange={onChange}
+                onClickClearInput={onClickClearInput}
+            />
+            {children}
         </header>
     )
 }
