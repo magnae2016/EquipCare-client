@@ -1,3 +1,10 @@
+.ce_info {
+    position: relative;
+    margin: 0 20px;
+    padding-bottom: 16px;
+    text-align: center;
+}
+
 .ce_btn_more {
     color: #303038;
     border: 1px solid #e6e6ea;
@@ -29,7 +36,7 @@
     margin: 15px 0 0 10px;
 }
 
-.comp_economy .ce_btn_more.fold::after {
+.ce_btn_more.fold::after {
     -webkit-transform: rotate(315deg);
     transform: rotate(315deg);
     margin-top: 18px;
@@ -44,7 +51,7 @@
     margin-left: 6px;
 }
 
-.comp_economy .fold + .ce_btn_more::after,
+.fold + .ce_btn_more::after,
 .ce_btn_more.right::after {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);

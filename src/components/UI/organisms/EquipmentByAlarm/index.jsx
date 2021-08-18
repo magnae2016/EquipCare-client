@@ -4,6 +4,7 @@ import axios from 'axios'
 import moment from 'moment'
 import './index.css'
 import ApiSubjectBx from '@/components/UI/molecules/apiSubjectBx'
+import BtnMore from '@/components/UI/atoms/btnMore'
 
 function ListEmpty({ warning, description }) {
     return (
@@ -50,23 +51,33 @@ function EquipmentByAlarm({ keyword }) {
     const [count, setCount] = useState(undefined)
     const [orderedList, setOrderedList] = useState([])
     const [updatedAt, setUpdatedAt] = useState(undefined)
+    const [isToggleOn, setIsToggleOn] = useState(false)
+    const [maxLimit, setMaxLimit] = useState(10)
+    let initialLimit = 5
+    const [limit, setLimit] = useState(initialLimit)
+
+    function handleClickMoreButton(e) {
+        setIsToggleOn((prevState) => !prevState)
+        setLimit((prevState) =>
+            prevState === maxLimit ? initialLimit : maxLimit
+        )
+    }
 
     useEffect(() => {
         async function fetchData() {
             const response = await axios.get(
                 `/api/alarms/${keyword}/equipments`
             )
-            console.log(response.data)
             const count = response.data.count
             const datas = response.data.datas
             let current = datas.map((element) => ({
                 ...element,
                 ratio: (element.COUNT / count) * 100,
             }))
-            console.log(current)
             setOrderedList(current)
             setCount(count)
             setUpdatedAt(response.data.last_update_time)
+            setMaxLimit(count)
         }
         fetchData()
     }, [])
@@ -115,19 +126,31 @@ function EquipmentByAlarm({ keyword }) {
                                 </div>
                                 <div className="status">
                                     <ul className="status_list">
-                                        {orderedList.map((element, index) => (
-                                            <List
-                                                key={index}
-                                                datas={element}
-                                                isFirst={
-                                                    index === 0 ? true : false
-                                                }
-                                            />
-                                        ))}
+                                        {orderedList
+                                            .slice(0, limit)
+                                            .map((element, index) => (
+                                                <List
+                                                    key={index}
+                                                    datas={element}
+                                                    isFirst={
+                                                        index === 0
+                                                            ? true
+                                                            : false
+                                                    }
+                                                />
+                                            ))}
                                     </ul>
                                 </div>
                             </div>
                         )}
+                    </div>
+                    <div className="ce_info">
+                        <BtnMore
+                            className={!isToggleOn ? '' : 'fold'}
+                            onClick={handleClickMoreButton}
+                            text={!isToggleOn ? '더보기' : '접기'}
+                        />
+                        {isToggleOn && <BtnMore text="더보기" />}
                     </div>
                 </div>
             </ApiSubjectBx>
