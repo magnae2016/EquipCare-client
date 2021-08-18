@@ -127,12 +127,12 @@
     position: absolute;
     top: 0;
     right: 22px;
-    right: 0px;
     font-size: 0.875em;
     color: #8f8f8f;
 }
 
-.u_atcp_wrap .kwd_lst .bt_del {
+.u_atcp_wrap .kwd_lst .bt_del,
+.u_atcp_wrap .kwd_lst .u_atcp_add {
     position: absolute;
     top: 0;
     right: -17px;
@@ -154,6 +154,37 @@
     height: 12px;
     background-position: -282px -59px;
     margin: auto;
+}
+
+.u_atcp_wrap .kwd_lst .u_atcp_add .imsc {
+    width: 12px;
+    height: 13px;
+    background-position: -282px -30px;
+    margin: auto;
+    vertical-align: middle;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.u_atcp_wrap .u_atcp_area .u_atcp .u_atcp_add {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -17px;
+    bottom: 0;
+    width: 37px;
+    padding-right: 10px;
+    border: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    line-height: 43px;
+    text-align: center;
+    -webkit-appearance: none;
+    background: 0 0;
 }
 
 .u_atcp_wrap .sggt_footer {

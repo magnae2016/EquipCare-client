@@ -16,9 +16,9 @@ function Item({ keyword, subword }) {
             <em className="date">
                 <span>{subword}개 항목</span>
             </em>
-            {/* <a role="button" className="bt_del">
-                <span className="imsc">삭제</span>
-            </a> */}
+            <a role="button" className="u_atcp_add">
+                <span className="imsc ico_add"></span>
+            </a>
         </li>
     )
 }
