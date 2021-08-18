@@ -26,7 +26,7 @@ function FormTotalSearch({
                             </Link>
                         </div>
                         <Link to="/" className="sch_btn_back"></Link>
-                        <form action="/equipment">
+                        <form>
                             <div className="sch_input_wrap">
                                 <input
                                     id="query"
@@ -53,9 +53,16 @@ function FormTotalSearch({
                                     ></button>
                                 )}
                             </div>
-                            <button className="sch_btn_search">
+                            <Link
+                                to={{
+                                    pathname: '/home',
+                                    hash: '#list-item-4',
+                                    state: { keyword: query },
+                                }}
+                                className="sch_btn_search"
+                            >
                                 <span className="sch_ico_mask"></span>
-                            </button>
+                            </Link>
                             <div className="sch_region"></div>
                         </form>
                     </div>
