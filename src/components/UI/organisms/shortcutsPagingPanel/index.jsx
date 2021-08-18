@@ -26,7 +26,7 @@ function ShortcutsPagingPanel() {
             prefix: '알람별',
             title: '장비 현황',
             selected: false,
-            hash: '#',
+            hash: '#list-item-4',
         },
         {
             prefix: '장비 알람',

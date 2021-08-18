@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '@/components/templates/Header'
 import ShortcutsPagingPanel from '@/components/UI/organisms/shortcutsPagingPanel'
 import MTBITimelineList from '@/components/UI/organisms/MTBITimelineList'
@@ -6,10 +6,22 @@ import AlarmByEquipment from '@/components/UI/organisms/AlarmByEquipment'
 import AlarmByDate from '@/components/UI/organisms/AlarmByDate'
 import EquipmentByAlarm from '@/components/UI/organisms/EquipmentByAlarm'
 
-function Home() {
+function Home(props) {
+    const { state = {} } = props.location
+    const { keyword } = state
+
     function handleClickInput(params) {
         window.location.href = '/search'
     }
+
+    useEffect(() => {
+        setTimeout(() => {
+            const { hash } = props.location
+            const id = hash.replace('#', '')
+            const element = document.getElementById(id)
+            if (element) element.scrollIntoView()
+        }, 1000)
+    }, [])
 
     return (
         <div>
@@ -18,7 +30,7 @@ function Home() {
             <MTBITimelineList />
             <AlarmByEquipment />
             <AlarmByDate />
-            <EquipmentByAlarm />
+            <EquipmentByAlarm keyword={keyword} />
         </div>
     )
 }

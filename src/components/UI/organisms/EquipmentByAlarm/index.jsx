@@ -15,9 +15,9 @@ function ListEmpty(params) {
     )
 }
 
-function EquipmentByAlarm(params) {
+function EquipmentByAlarm({ keyword }) {
     return (
-        <section id="list-item-3">
+        <section id="list-item-4">
             <ApiSubjectBx title="알람별 장비 현황">
                 <div className="district">
                     <div className="district_info">

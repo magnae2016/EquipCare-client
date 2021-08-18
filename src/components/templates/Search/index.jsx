@@ -1,24 +1,31 @@
 import React from 'react'
 import './index.css'
 import Header from '@/components/templates/Header'
+import { Link } from 'react-router-dom'
 
 function Item({ keyword, subword, onChange }) {
     return (
         <li>
             <div className="type_date">
-                <a className="kwd">
+                <Link
+                    to={{
+                        pathname: '/home',
+                        hash: '#list-item-4',
+                        state: { keyword: keyword },
+                    }}
+                    className="kwd"
+                >
                     <span className="fix">
                         <span className="common_ico_kwd">
                             <i className="imsc ico_search"></i>
                         </span>
                         {keyword}
                     </span>
-                </a>
+                </Link>
                 <em className="date">
                     <span>{subword}개 항목</span>
                 </em>
                 <a
-                    href={() => false}
                     role="button"
                     className="u_atcp_add"
                     onClick={() => {
