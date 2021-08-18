@@ -107,3 +107,132 @@
     font-size: 16px;
     color: #8f8f8f;
 }
+
+.district_content {
+    padding: 0 20px;
+    letter-spacing: -1px;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.district_content .title {
+    position: relative;
+    padding: 20px 0 2px;
+}
+
+.district_content .title_txt {
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.district_content .title_info {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    font-size: 15px;
+    line-height: 17px;
+    color: #8f8f8f;
+}
+
+.district_content .title_info::before {
+    content: '';
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background-position: -446px -499px;
+    vertical-align: top;
+    margin-right: 4px;
+}
+
+.district_content .status {
+    padding-bottom: 15px;
+}
+
+.district_content .status_item {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-top: 19px;
+}
+
+.district_content .district_candidate,
+.district_content .district_rate,
+.district_content .district_graph,
+.district_content .district_count {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.district_content .status_item.is_first .district_candidate,
+.district_content .status_item.is_first .district_rate {
+    font-weight: bold;
+}
+
+.district_content .district_candidate {
+    width: 29.7%;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.district_content .district_rate {
+    width: 50px;
+    text-align: right;
+}
+
+.district_content .district_graph {
+    padding-left: 9px;
+}
+
+.district_content .graph_bar {
+    position: relative;
+    height: 15px;
+}
+
+.district_content .graph_bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f3f5fc;
+    margin-left: 1px;
+}
+
+.district_content .district_count {
+    width: 21.8%;
+    text-align: right;
+}
+
+.district_content .count_txt {
+    display: block;
+    margin: -1px -1px 0 0;
+    font-size: 14px;
+    letter-spacing: 0;
+}
+
+.district_content .candidate_party {
+    color: #7f7f7f;
+    padding-left: 9px;
+}
+
+.district_content .rate_txt {
+    display: block;
+    margin-top: -1px;
+    font-size: 16px;
+    letter-spacing: 0;
+}
+
+.district_content .rate_per {
+    font-size: 13px;
+}
+
+.district_content .status_item.is_first.party1 .district_count,
+.district_content .status_item.is_first.party100 .district_count,
+.district_content .status_item.is_first.party1 .district_rate,
+.district_content .status_item.is_first.party100 .district_rate {
+    color: #7294eb;
+}
+
+.district_content .status_item.party1 .graph_bar,
+.district_content .status_item.party100 .graph_bar {
+    background-color: #739fff;
+}
