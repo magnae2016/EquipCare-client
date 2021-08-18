@@ -140,17 +140,30 @@ function EquipmentByAlarm({ keyword }) {
                                                 />
                                             ))}
                                     </ul>
+                                    {count > 5 ? (
+                                        <div
+                                            className="ce_info"
+                                            style={{ paddingTop: 15 }}
+                                        >
+                                            <BtnMore
+                                                className={
+                                                    !isToggleOn ? '' : 'fold'
+                                                }
+                                                onClick={handleClickMoreButton}
+                                                text={
+                                                    !isToggleOn
+                                                        ? '더보기'
+                                                        : '접기'
+                                                }
+                                            />
+                                            {isToggleOn && (
+                                                <BtnMore text="더보기" />
+                                            )}
+                                        </div>
+                                    ) : null}
                                 </div>
                             </div>
                         )}
-                    </div>
-                    <div className="ce_info">
-                        <BtnMore
-                            className={!isToggleOn ? '' : 'fold'}
-                            onClick={handleClickMoreButton}
-                            text={!isToggleOn ? '더보기' : '접기'}
-                        />
-                        {isToggleOn && <BtnMore text="더보기" />}
                     </div>
                 </div>
             </ApiSubjectBx>
