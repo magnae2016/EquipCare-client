@@ -55,10 +55,10 @@ function Search({ query, onChange, onClickClearInput, suggest, hasFocus }) {
                     <div className="sggt_fixer">
                         <div className="sggt_header">
                             <h2 className="tit">
-                                <span className="tit_inner">최근 검색어</span>
+                                <span className="tit_inner">알람 목록</span>
                             </h2>
                             <div className="option">
-                                <a className="item">전체삭제</a>
+                                <a className="item"></a>
                             </div>
                         </div>
                         <div className="sggt_container">
