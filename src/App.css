@@ -241,7 +241,7 @@ table caption {
 }
 
 /* phones */
-@media (min-width: 576px) {
+@media (max-width: 576px) {
     .column_left {
         width: 100%;
     }
