@@ -149,7 +149,6 @@ table caption {
 .column_left {
     flex: none;
     width: 30%;
-    /* max-width: 375px; */
     z-index: 100;
 }
 
@@ -239,4 +238,28 @@ table caption {
 
 .sc ::-webkit-scrollbar {
     display: none;
+}
+
+/* phones */
+@media (min-width: 576px) {
+    .column_left {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+}
+
+/* tablets */
+@media (min-width: 992px) {
+    .column_left {
+        width: 33%;
+    }
+}
+
+/* desktops */
+@media (min-width: 1200px) {
+    .column_left {
+        width: 30%;
+    }
 }
